@@ -6,7 +6,10 @@ const app = express();
 const server = http.createServer(app);
 const io = require("socket.io")(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: [
+      "http://localhost:3000",
+      "https://wechat-app-danielyepes.netlify.app",
+    ],
   },
 });
 
