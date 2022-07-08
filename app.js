@@ -12,11 +12,15 @@ const io = require("socket.io")(server, {
 
 io.on("connection", (socket) => {
   socket.on("conectado", (data) => {
-    console.log(data);
+    console.log(data, socket.id);
   });
 
   socket.on("add", (data) => {
     io.emit("add", data);
+  });
+
+  socket.on("message", (data) => {
+    io.emit("message", data);
   });
 });
 
