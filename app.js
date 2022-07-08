@@ -12,7 +12,7 @@ const io = require("socket.io")(server, {
 
 io.on("connection", (socket) => {
   socket.on("conectado", (data) => {
-    console.log(data, socket.id);
+    console.log(data);
   });
 
   socket.on("add", (data) => {
